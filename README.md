@@ -65,9 +65,9 @@ Puedes verificar Angular CLI en consola con: ```ng version```
 - API Providers: ```http://localhost:3003/api/providers```
 
 #### Microservice-Orders-NodeJS
-- Corriendo en: ```http://localhost:3003```
-- Swagger API Docs: ```http://localhost:3003/api/docs```
-- API Providers: ```http://localhost:3003/api/providers```
+- Corriendo en: ```http://localhost:3004```
+- Swagger API Docs: ```http://localhost:3004/api/docs```
+- API Providers: ```http://localhost:3004/api/orders```
 
 #### Microservice-Tickets-NodeJS
 - Corriendo en: ```http://localhost:3005```
