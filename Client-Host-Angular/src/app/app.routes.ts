@@ -52,6 +52,23 @@ export const routes: Routes = [
     },
 
   /**
+   * Ruta de tickets de soporte técnico.
+   *
+   * @remarks
+   * Renderiza el componente `TicketsPage`, encargado
+   * de mostrar y gestionar el listado de tickets de soporte.
+   */
+  {
+    path: 'tickets',
+    loadComponent: () =>
+      loadRemoteModule({
+        type: 'module',
+        remoteEntry: 'http://localhost:4205/remoteEntry.js',
+        exposedModule: './TicketsPage',
+      }).then(m => m.TicketsPage),
+  },
+
+  /**
    * Ruta comodín.
    *
    * @remarks

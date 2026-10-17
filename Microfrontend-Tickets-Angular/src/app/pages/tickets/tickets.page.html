@@ -1,0 +1,13 @@
+@switch (state) {
+  @case ('loading') {
+    <app-alert alertState="loading" text="Cargando Tickets de Soporte Técnico..."></app-alert>
+  }
+
+  @case ('error') {
+    <app-alert alertState="error" text="Error al Cargar los Tickets de Soporte Técnico"></app-alert>
+  }
+
+  @case ('success') {
+    <app-tickets-table [tickets]="tickets"></app-tickets-table>
+  }
+}
