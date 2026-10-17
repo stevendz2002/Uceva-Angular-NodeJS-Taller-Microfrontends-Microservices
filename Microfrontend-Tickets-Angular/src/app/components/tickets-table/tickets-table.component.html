@@ -1,0 +1,38 @@
+<div class="table-responsive">
+  <table class="table table-striped table-hover border align-middle">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Código</th>
+        <th scope="col">Asunto</th>
+        <th scope="col">Solicitante</th>
+        <th scope="col">Departamento</th>
+        <th scope="col">Prioridad</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (ticket of tickets; track ticket.id) {
+        <tr>
+          <th scope="row" class="font-monospace text-primary fw-bold">{{ ticket.ticketCode }}</th>
+          <td>{{ ticket.subject }}</td>
+          <td>{{ ticket.requesterEmail }}</td>
+          <td>{{ ticket.department }}</td>
+          <td>
+            <dsb-badge-atom
+              [text]="ticket.priority"
+              [type]="getPriorityBadge(ticket.priority)">
+            </dsb-badge-atom>
+          </td>
+          <td>
+            <dsb-badge-atom
+              [text]="ticket.status"
+              [type]="getStatusBadge(ticket.status)">
+            </dsb-badge-atom>
+          </td>
+          <td>{{ ticket.createdAt | date:'short' }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
