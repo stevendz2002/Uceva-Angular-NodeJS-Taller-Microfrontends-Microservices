@@ -22,19 +22,23 @@ Puedes verificar Angular CLI en consola con: ```ng version```
 - Ubícate en la raíz del proyecto de Client-Host-Angular y ejecuta el comando: ```npm i```
 - Ubícate en la raíz del proyecto de Microfrontend-Users-Angular y ejecuta el comando: ```npm i```
 - Ubícate en la raíz del proyecto de Microfrontend-Products-Angular y ejecuta el comando: ```npm i```
+- Ubícate en la raíz del proyecto de Microfrontend-Providers-Angular y ejecuta el comando: ```npm i```
+- Ubícate en la raíz del proyecto de Microfrontend-Tickets-Angular y ejecuta el comando: ```npm i```
 - Ubícate en la raíz del proyecto de Microservice-Users-NodeJS y ejecuta el comando: ```npm i```
 - Ubícate en la raíz del proyecto de Microservice-Products-NodeJS y ejecuta el comando: ```npm i```
+- Ubícate en la raíz del proyecto de Microservice-Providers-NodeJS y ejecuta el comando: ```npm i```
 - Ubícate en la raíz del proyecto de Microservice-Tickets-NodeJS y ejecuta el comando: ```npm i```
-- Ubícate en la raíz del proyecto de Microfrontend-Tickets-Angular y ejecuta el comando: ```npm i```
 
 
 ### 2️⃣ Ejecutar los Proyectos
 
 - Ubícate en la raíz del proyecto de Microservice-Users-NodeJS y ejecuta el comando: ```npm run start```
 - Ubícate en la raíz del proyecto de Microservice-Products-NodeJS y ejecuta el comando: ```npm run start```
+- Ubícate en la raíz del proyecto de Microservice-Providers-NodeJS y ejecuta el comando: ```npm run start```
 - Ubícate en la raíz del proyecto de Microservice-Tickets-NodeJS y ejecuta el comando: ```npm run start```
 - Ubícate en la raíz del proyecto de Microfrontend-Users-Angular y ejecuta el comando: ```npm run start```
 - Ubícate en la raíz del proyecto de Microfrontend-Products-Angular y ejecuta el comando: ```npm run start```
+- Ubícate en la raíz del proyecto de Microfrontend-Providers-Angular y ejecuta el comando: ```npm run start```
 - Ubícate en la raíz del proyecto de Microfrontend-Tickets-Angular y ejecuta el comando: ```npm run start```
 - Ubícate en la raíz del proyecto de Client-Host-Angular y ejecuta el comando: ```npm run start```
 
@@ -51,6 +55,11 @@ Puedes verificar Angular CLI en consola con: ```ng version```
 - Swagger API Docs: ```http://localhost:3002/api/docs```
 - API Products: ```http://localhost:3002/api/products/{countProducts}```
 
+#### Microservice-Providers-NodeJS
+- Corriendo en: ```http://localhost:3003```
+- Swagger API Docs: ```http://localhost:3003/api/docs```
+- API Providers: ```http://localhost:3003/api/providers```
+
 #### Microservice-Tickets-NodeJS
 - Corriendo en: ```http://localhost:3005```
 - Swagger API Docs: ```http://localhost:3005/api/docs```
@@ -63,6 +72,10 @@ Puedes verificar Angular CLI en consola con: ```ng version```
 #### Microfrontend-Products-Angular
 - Corriendo en: ```http://localhost:4202```
 - RemoteEntry: ```http://localhost:4202/remoteEntry.js```
+
+#### Microfrontend-Providers-Angular
+- Corriendo en: ```http://localhost:4203```
+- RemoteEntry: ```http://localhost:4203/remoteEntry.js```
 
 #### Microfrontend-Tickets-Angular
 - Corriendo en: ```http://localhost:4205```

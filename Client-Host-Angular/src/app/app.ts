@@ -3,19 +3,21 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarConfig, NavbarOrganism } from '@brejcha13320/design-system-bootstrap';
 
 /**
- * Componente raíz de la aplicación.
+ * Componente raíz del Host de la solución (`Client-Host-Angular`).
  *
  * @remarks
- * Este componente actúa como punto de entrada principal
- * de la aplicación Angular. Define la estructura base
- * y configura el navbar principal mediante el componente
- * `NavbarOrganism`.
+ * Este componente actúa como contenedor principal (Shell) de la arquitectura
+ * de microfrontends. Configura la barra de navegación global (`NavbarOrganism`)
+ * y renderiza los microfrontends federados a través del `<router-outlet />`.
  *
- * Es responsable de:
- * - Inicializar el layout general
- * - Proveer la configuración del menú de navegación
- * - Renderizar las vistas según el sistema de rutas
+ * Enlaces disponibles en el menú de navegación:
+ * - **Usuarios**: Microfrontend base en el puerto 4201.
+ * - **Productos**: Microfrontend base en el puerto 4202.
+ * - **Proveedores**: Microfrontend del Integrante 1 en el puerto 4203.
+ * - **Órdenes**: Microfrontend del Integrante 2 en el puerto 4204.
+ * - **Tickets**: Microfrontend del Integrante 3 en el puerto 4205.
  *
+ * @public
  */
 @Component({
   selector: 'app-root',
@@ -26,39 +28,26 @@ import { NavbarConfig, NavbarOrganism } from '@brejcha13320/design-system-bootst
 export class App {
 
   /**
-   * Configuración del navbar principal.
+   * Configuración de la barra de navegación principal.
    *
    * @remarks
-   * Define el título, icono y enlaces de navegación
-   * que se renderizan en el componente `NavbarOrganism`.
+   * Define el título, icono institucional y enlaces de enrutamiento
+   * hacia cada uno de los microfrontends del sistema.
    *
    * @type {NavbarConfig}
-   *
-   * @example
-   * ```ts
-   * {
-   *   title: 'Angular Client',
-   *   iconConfig: {
-   *     icon: 'bootstrap',
-   *     size: 2
-   *   },
-   *   navLinks: [
-   *     { text: 'Usuarios', url: '/users' },
-   *     { text: 'Productos', url: '/products' }
-   *   ]
-   * }
-   * ```
    */
   navbarConfig: NavbarConfig = {
-    title: 'Angular Client',
+    title: 'Angular Client - UCEVA',
     iconConfig: {
       icon: 'bootstrap',
-      size: 2
+      size: 2,
     },
     navLinks: [
       { text: 'Usuarios', url: '/users' },
       { text: 'Productos', url: '/products' },
+      { text: 'Proveedores', url: '/providers' },
+      { text: 'Órdenes', url: '/orders' },
       { text: 'Tickets', url: '/tickets' },
-    ]
+    ],
   };
 }
