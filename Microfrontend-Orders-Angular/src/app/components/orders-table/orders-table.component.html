@@ -1,0 +1,39 @@
+<table class="table table-striped border">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">N° Orden</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Producto</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Total</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    @if (orders.length === 0) {
+      <tr>
+        <td colspan="8" class="text-center text-muted py-3">No hay órdenes registradas.</td>
+      </tr>
+    } @else {
+      @for (order of orders; track order.id) {
+        <tr>
+          <th scope="row">{{ order.id }}</th>
+          <td>{{ order.orderNumber }}</td>
+          <td>{{ order.customerName }}</td>
+          <td>{{ order.productName }}</td>
+          <td>{{ order.quantity }}</td>
+          <td>{{ order.totalPrice | currency }}</td>
+          <td>
+            <dsb-badge-atom
+              [text]="order.status"
+              [type]="getBadgeType(order.status)">
+            </dsb-badge-atom>
+          </td>
+          <td>{{ order.createdAt | date:'short' }}</td>
+        </tr>
+      }
+    }
+  </tbody>
+</table>
