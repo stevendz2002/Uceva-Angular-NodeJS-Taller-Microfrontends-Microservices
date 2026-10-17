@@ -1,0 +1,31 @@
+<div class="container-fluid py-3">
+  <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom">
+    <div>
+      <h2 class="fw-bold mb-1">
+        <i class="bi bi-truck me-2 text-primary"></i>Gestión de Proveedores
+      </h2>
+      <p class="text-muted mb-0 small">
+        Directorio corporativo y administración de suministros (Microfrontend Providers - Puerto 4203)
+      </p>
+    </div>
+    @if (state === 'success') {
+      <span class="badge bg-primary fs-6 px-3 py-2 rounded-pill shadow-sm">
+        Total: {{ providers.length }} Proveedores
+      </span>
+    }
+  </div>
+
+  @switch(state) {
+    @case('loading') {
+      <app-alert alertState="loading" text="Cargando información de proveedores desde el microservicio..."></app-alert>
+    }
+
+    @case('error') {
+      <app-alert alertState="error" text="Error al cargar los proveedores. Verifique que el microservicio esté en ejecución en el puerto 3003."></app-alert>
+    }
+
+    @case('success') {
+      <app-providers-table [providers]="providers"></app-providers-table>
+    }
+  }
+</div>

@@ -1,0 +1,43 @@
+<div class="table-responsive shadow-sm rounded border">
+  <table class="table table-striped table-hover align-middle mb-0">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Razón Social</th>
+        <th scope="col">NIT</th>
+        <th scope="col">Correo Electrónico</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col" class="text-center">Categoría</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (provider of providers; track provider.id) {
+        <tr>
+          <th scope="row" class="fw-semibold text-secondary">{{ provider.id }}</th>
+          <td class="fw-bold">{{ provider.name }}</td>
+          <td><code>{{ provider.nit }}</code></td>
+          <td>
+            <a [href]="'mailto:' + provider.email" class="text-decoration-none text-primary">
+              {{ provider.email }}
+            </a>
+          </td>
+          <td>{{ provider.phone }}</td>
+          <td>{{ provider.city }}</td>
+          <td class="text-center">
+            <dsb-badge-atom
+              [text]="provider.category"
+              [type]="getBadgeType(provider.category)">
+            </dsb-badge-atom>
+          </td>
+        </tr>
+      } @empty {
+        <tr class="empty-row">
+          <td colspan="7" class="text-center py-4 text-muted">
+            No se encontraron proveedores registrados.
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
