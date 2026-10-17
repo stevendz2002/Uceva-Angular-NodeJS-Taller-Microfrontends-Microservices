@@ -25,17 +25,20 @@ describe('App', () => {
     expect(component).toBeTruthy();
   });
 
-  it('debería definir la configuración del navbar correctamente', () => {
+  it('debería definir la configuración del navbar correctamente con todos los microfrontends', () => {
     expect(component.navbarConfig).toEqual({
-      title: 'Angular Client',
+      title: 'Angular Client - UCEVA',
       iconConfig: {
         icon: 'bootstrap',
-        size: 2
+        size: 2,
       },
       navLinks: [
         { text: 'Usuarios', url: '/users' },
-        { text: 'Productos', url: '/products' }
-      ]
+        { text: 'Productos', url: '/products' },
+        { text: 'Proveedores', url: '/providers' },
+        { text: 'Órdenes', url: '/orders' },
+        { text: 'Tickets', url: '/tickets' },
+      ],
     });
   });
 
@@ -55,5 +58,4 @@ describe('App', () => {
     const routerOutlet = fixture.debugElement.query(By.css('router-outlet'));
     expect(routerOutlet).toBeTruthy();
   });
-
 });
