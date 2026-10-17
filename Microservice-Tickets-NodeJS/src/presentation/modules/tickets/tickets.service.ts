@@ -83,7 +83,7 @@ export class TicketsService {
       'Requerimiento de respaldo de información semanal',
     ];
 
-    const subject = subjectList[(index - 1) % subjectList.length];
+    const subject = subjectList[(index - 1) % subjectList.length] ?? 'Solicitud general de soporte técnico';
 
     return Promise.resolve({
       id: faker.string.uuid(),
